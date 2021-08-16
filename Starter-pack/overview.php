@@ -13,7 +13,7 @@
 
 <ul>
     <?php foreach ($cards as $card) : ?>
-        <li><?= $card['name'] ?></li>
+        <li><?= $card['Name'] . $card['HP']  .$card['Skills'] . $card['PokemonLevel'] ?></li>
     <?php endforeach; ?>
 </ul>
 
