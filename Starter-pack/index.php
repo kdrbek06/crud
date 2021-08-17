@@ -49,7 +49,14 @@ $cards = $cardRepository->get();
 
 if($_POST)
 {
-    $createNewCard = $cardRepository->create();
+    if (isset($_POST['editedId']))
+    {
+        $cardRepository->update();
+    }
+    else
+    {
+        $createNewCard = $cardRepository->create();
+    }
     $cards = $cardRepository->get();
 }
 
@@ -65,6 +72,14 @@ if($_POST)
 if (isset($_GET['edit']))
 {
     require 'edit.php';
+}
+else if (isset($_GET['delete']))
+{
+    $cardRepository->delete();
+    $cards = $cardRepository->get();
+
+// Redirect to index.php
+    header("Location: index.php");
 }
 else
 {

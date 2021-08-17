@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         table {
             font-family: arial, sans-serif;
@@ -26,7 +27,7 @@
 </head>
 <body>
 
-<form action="">
+<form action="index.php" method="post">
 
     <table>
         <tr>
@@ -40,11 +41,13 @@
         <?php foreach ($cards as $card) :  ?>
         <?php if($card['id'] == $_GET['edit']) : ?>
         <tr>
-            <td><?= $card['id'] ?> </td>
-            <td><?= $card['name'] ?> </td>
-            <td><?= $card['hp'] ?> </td>
-            <td><?= $card['skill'] ?> </td>
-            <td><a href="index.php?edit=<?= $card['id'] ?>" class="w3-button w3-blue">Edit</a></td>
+
+            <td><input type="hidden" name="editedId" value="<?= $card['id'] ?>"><?= $card['id'] ?></td>
+            <td><input type="text" name="editedName" value="<?= $card['name'] ?>"></td>
+            <td><input type="text" name="editedHp" value="<?= $card['hp'] ?>"></td>
+            <td><input type="text" name="editedSkill" value="<?= $card['skill'] ?>"></td>
+
+            <td><input type="submit" value="Edit" class="w3-button w3-blue"></input></td>
 
         </tr>
         <?php endif; ?>

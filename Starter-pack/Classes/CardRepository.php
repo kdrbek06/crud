@@ -44,19 +44,22 @@ class CardRepository
 
     public function update()
     {
+        $editedId = $_POST['editedId'];
         $editedName = $_POST['editedName'];
         $editedHp = $_POST['editedHp'];
         $editedSkill = $_POST['editedSkill'];
-        $editedId = '';
-
-//        $sql = "UPDATE pokemons SET name = '".$newName."', hp = '".$newHp."', skill =  '".$newSkill."')" WHERE id =1;
 
 
+        $sql = "UPDATE pokemons SET name = '".$editedName."', hp = '".$editedHp."', skill =  '".$editedSkill."' WHERE id = '".$editedId."'";
+
+        return $this->databaseManager->connect()->query($sql);
     }
 
     public function delete()
     {
-
+        $deletedId = $_GET['delete'];
+        $sql = "DELETE FROM pokemons WHERE id = '".$deletedId."'";
+        return $this->databaseManager->connect()->query($sql);
     }
 
 }

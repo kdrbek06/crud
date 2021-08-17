@@ -49,7 +49,11 @@
         <td><?= $card['hp'] ?> </td>
         <td><?= $card['skill'] ?> </td>
 <!--        <td><button id="--><?//= $card['id'] ?><!--" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue">Edit</button></td>-->
-        <td><a href="index.php?edit=<?= $card['id'] ?>" class="w3-button w3-blue">Edit</a></td>
+        <td>
+            <a href="index.php?edit=<?= $card['id'] ?>" class="w3-button w3-blue">Edit</a>
+            <a href="index.php?delete=<?= $card['id'] ?>" class="w3-button w3-red">Delete</a>
+        </td>
+
 
 
 
@@ -58,7 +62,7 @@
     <?php endforeach; ?>
 </table>
 
-// TODO: Create a form
+<h2>Create New Pokemon</h2>
 
 <form action="" method="post">
 
@@ -113,12 +117,12 @@
 
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     function selectForEdit(id){
         document.getElementById('id01').style.display='block';
         console.log(id);
     }
-</script>
+</script>-->
 
 
 
