@@ -15,7 +15,13 @@ class CardRepository
 
     public function create()
     {
+        $newName = $_POST['name'];
+        $newHp = $_POST['hp'];
+        $newSkill = $_POST['skill'];
 
+        $sql = "INSERT INTO pokemons (name,hp, skill) VALUE ('".$newName."', '".$newHp."', '".$newSkill."')";
+
+        return $this->databaseManager->connect()->query($sql);
     }
 
     // Get one
@@ -29,9 +35,8 @@ class CardRepository
     {
         // TODO: replace dummy data by real one
         $sql = 'SELECT * FROM pokemons';
-        $result = $this->databaseManager->connect()->query($sql);
 
-        return $result;
+        return $this->databaseManager->connect()->query($sql);
 
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->connection-> (runYourQueryHere)

@@ -30,6 +30,7 @@
     <label for="skill">Skills: </label>
     <input type="text" name="skill" id="skill">
 
+    <input type="submit" value="Add Pokemon" name="submit">
 
 </form>
 
