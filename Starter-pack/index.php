@@ -46,6 +46,7 @@ $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
 
+
 if($_POST)
 {
     $createNewCard = $cardRepository->create();
@@ -61,4 +62,11 @@ if($_POST)
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
-require 'overview.php';
+if (isset($_GET['edit']))
+{
+    require 'edit.php';
+}
+else
+{
+    require 'overview.php';
+}

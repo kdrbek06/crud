@@ -44,6 +44,13 @@ class CardRepository
 
     public function update()
     {
+        $editedName = $_POST['editedName'];
+        $editedHp = $_POST['editedHp'];
+        $editedSkill = $_POST['editedSkill'];
+        $editedId = '';
+
+//        $sql = "UPDATE pokemons SET name = '".$newName."', hp = '".$newHp."', skill =  '".$newSkill."')" WHERE id =1;
+
 
     }
 
