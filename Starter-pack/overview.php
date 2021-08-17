@@ -13,7 +13,7 @@
 
 <ul>
     <?php foreach ($cards as $card) : ?>
-        <li><?= 'Pokemon Name; ' . $card['Name'] . '  HP; ' . $card['HP'] . '  Skills; '. $card['Skills']?></li>
+        <li><?= 'Pokemon Name; ' . $card['name'] . '  HP; ' . $card['hp'] . '  Skill; '. $card['skill']?></li>
     <?php endforeach; ?>
 </ul>
 
@@ -21,12 +21,14 @@
 
 <form action="" method="post">
 
-    <label for="Name">Pokemon Name:</label>
-    <input type="text" name="Name" id="name">
+    <label for="name">Pokemon Name:</label>
+    <input type="text" name="name" id="name">
 
+    <label for="hp">HP:</label>
+    <input type="number" name="hp" id="hp">
 
-    <label for="Skills">Skills: </label>
-    <inpul type="text" name="Name"></inpul>
+    <label for="skill">Skills: </label>
+    <input type="text" name="skill" id="skill">
 
 
 </form>
