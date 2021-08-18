@@ -14,7 +14,7 @@ require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
 
 
-function whatIsHappening()
+/*function whatIsHappening()
 {
     echo '<pre>';
     echo '<h2>$_GET</h2>';
@@ -29,14 +29,12 @@ function whatIsHappening()
     }
     echo '</pre>';
 }
-
-whatIsHappening();
+whatIsHappening();*/
 
 
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
-
 
 
 
@@ -55,20 +53,17 @@ if($_POST)
     }
     else
     {
-        $createNewCard = $cardRepository->create();
+        $cardRepository->create();
     }
+
     $cards = $cardRepository->get();
 }
 
 
 
-
-
-
-
-
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
+
 if (isset($_GET['edit']))
 {
     require 'edit.php';
