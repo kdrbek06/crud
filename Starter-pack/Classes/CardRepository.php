@@ -54,6 +54,9 @@ class CardRepository
         $editedSkill = $_POST['editedSkill'];
 
 
+        // this is protection for sql injection
+        if (!is_numeric($editedId)) return;
+
         $sql = "UPDATE pokemons SET name = '".$editedName."', hp = '".$editedHp."', skill =  '".$editedSkill."' WHERE id = '".$editedId."'";
         return $this->databaseManager->connect()->query($sql);
     }
