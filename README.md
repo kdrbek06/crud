@@ -1,9 +1,7 @@
 # Create, read, update and delete
 
-- Repository: `crud`
-- Type of Challenge: `Learning`
-- Duration: `3 days`
-- Team challenge : `solo`
+![alt text](https://github.com/kdrbek06/crud/blob/main/img/project2.png?raw=true)
+
 
 ## Must-have features
 
